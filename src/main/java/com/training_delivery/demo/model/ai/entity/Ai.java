@@ -1,4 +1,4 @@
-package com.training_delivery.demo.model.ai;
+package com.training_delivery.demo.model.ai.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
