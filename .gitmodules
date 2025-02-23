@@ -1,0 +1,6 @@
+[submodule "trainning"]
+	path = trainning
+	url = https://github.com/Yea-Na/trainning_submodule.git
+[submodule "submodule"]
+	path = submodule
+	url = https://github.com/Yea-Na/trainning_submodule.git
