@@ -1,4 +1,4 @@
-package com.training_delivery.demo.model.menu;
+package com.training_delivery.demo.model.menu.entity;
 
 
 import jakarta.persistence.*;
