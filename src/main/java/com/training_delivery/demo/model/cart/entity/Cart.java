@@ -1,10 +1,9 @@
-package com.training_delivery.demo.model.cart;
+package com.training_delivery.demo.model.cart.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
-import com.server.delivery.model.cart.entity.MenuCart;
 
 
 import java.util.List;
