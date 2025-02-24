@@ -1,5 +1,7 @@
 package com.training_delivery.demo.model.store.entity;
 
+
+import com.training_delivery.demo.model.store.constant.SeoulAreaCode;
 import com.training_delivery.demo.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,7 +20,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @SQLRestriction("location_is_deleted = false")
 @Table(name = "p_location")
-public class Location extends BaseEntity {
+public class Location extends BaseEntity { BaseEntity 작성!*/
+
 
         @Id
         @GeneratedValue(strategy = GenerationType.UUID)
