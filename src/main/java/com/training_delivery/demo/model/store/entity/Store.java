@@ -1,7 +1,12 @@
 package com.training_delivery.demo.model.store.entity;
 
+import com.training_delivery.demo.model.menu.entity.Menu;
+import com.training_delivery.demo.model.order.entity.Order;
+import com.training_delivery.demo.model.review.entity.Review;
+import com.training_delivery.demo.model.user.entity.UserStore;
 import jakarta.persistence.*;
 import lombok.*;
+import org.apache.catalina.Manager;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
@@ -40,14 +45,14 @@ public class Store {
     @Column(name = "store_is_granted")
     private boolean storeIsGranted = Boolean.FALSE;
 
-    @OneToMany(mappedBy = "store")
-    private List<UserStore> userStore;
+//    @OneToMany(mappedBy = "store")
+//    private List<UserStore> userStore;
 
     @OneToMany(mappedBy = "store")
     private List<Menu> menus;
 
-    @OneToMany(mappedBy = "store")
-    private List<Order> orders;
+//    @OneToMany(mappedBy = "store")
+//    private List<Order> orders;
 
     @OneToMany(mappedBy = "store")
     private List<StoreOperationTimes> operatingHours;
@@ -64,9 +69,9 @@ public class Store {
     @JoinColumn(name = "location_uuid")
     private Location location;
 
-    @OneToMany(mappedBy = "store")
-    private List<OwnerStore> ownerStore;
+//    @OneToMany(mappedBy = "store")
+//    private List<OwnerStore> ownerStore;
 
-    @OneToOne(mappedBy = "store")
-    private Manager manager;
+//    @OneToOne(mappedBy = "store")
+//    private Manager manager;
 }

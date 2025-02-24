@@ -1,7 +1,6 @@
 package com.training_delivery.demo.model.master.repository;
 
-import com.training_delivery.demo.model.master.Master;
-import com.training_delivery.demo.model.menu.entity.Menu;
+import com.training_delivery.demo.model.master.entity.Master;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,8 @@
 package com.training_delivery.demo.model.delivery.entity;
 
 
+import com.training_delivery.demo.common.BaseEntity;
+import com.training_delivery.demo.model.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;

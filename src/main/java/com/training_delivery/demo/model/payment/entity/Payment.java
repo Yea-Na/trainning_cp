@@ -1,6 +1,8 @@
 package com.training_delivery.demo.model.payment.entity;
 
 
+import com.training_delivery.demo.model.order.entity.Order;
+import com.training_delivery.demo.model.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 

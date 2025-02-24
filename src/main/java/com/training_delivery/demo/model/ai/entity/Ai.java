@@ -1,5 +1,7 @@
 package com.training_delivery.demo.model.ai.entity;
 
+import com.training_delivery.demo.common.BaseEntity;
+import com.training_delivery.demo.model.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

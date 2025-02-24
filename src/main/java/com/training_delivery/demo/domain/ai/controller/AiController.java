@@ -19,15 +19,15 @@ import java.util.Map;
 @RequestMapping("/api/ai")
 public class AiController {
 
-    private final AiService aiService;
+//    private final AiService aiService;
 
-    @PostMapping("/generate")
-    public String generateContent(@RequestParam Map<String, Object> requestData,
-                                  @AuthenticationPrincipal UserDetails userDetails) {
-
-
-        return aiService.generateContent();
-    }
+//    @PostMapping("/generate")
+//    public String generateContent(@RequestParam Map<String, Object> requestData,
+//                                  @AuthenticationPrincipal UserDetails userDetails) {
+//
+//
+//        return aiService.generateContent();
+//    }
 
 
 

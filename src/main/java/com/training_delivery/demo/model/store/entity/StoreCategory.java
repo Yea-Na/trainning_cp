@@ -20,9 +20,9 @@ public class StoreCategory {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID storeCategoryId;
 
-    @Column(name = "store_type", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private StoreType storeType;
+//    @Column(name = "store_type", nullable = false)
+//    @Enumerated(EnumType.STRING)
+//    private StoreType storeType;
 
     @Builder.Default
     @Column(name = "store_category_is_deleted")

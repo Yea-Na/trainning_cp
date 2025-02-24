@@ -1,6 +1,9 @@
 package com.training_delivery.demo.model.menu.entity;
 
 
+import com.training_delivery.demo.common.BaseEntity;
+import com.training_delivery.demo.model.cart.entity.MenuCart;
+import com.training_delivery.demo.model.store.entity.Store;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
@@ -46,7 +49,7 @@ public class Menu extends BaseEntity {
     private Store store;
 
 
-    @OneToMany(mappedBy = "menu")
-    private List<MenuCart> menuCarts;
+//    @OneToMany(mappedBy = "menu")
+//    private List<MenuCart> menuCarts;
 
 }

@@ -1,6 +1,7 @@
 package com.training_delivery.demo.domain.menu.dto.request;
 
 import com.training_delivery.demo.model.menu.entity.Menu;
+import com.training_delivery.demo.model.store.entity.Store;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

@@ -16,8 +16,12 @@ import org.hibernate.annotations.SQLRestriction;
 public class Owner {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Builder.Default
+    @Column(name = "owner_is_Deleted")
+    private Boolean isDeleted = Boolean.FALSE;
 
     //owner 사업자번호??
 
