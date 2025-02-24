@@ -1,4 +1,4 @@
-package com.training_delivery.demo.model.delivery;
+package com.training_delivery.demo.model.delivery.entity;
 
 import lombok.Getter;
 
