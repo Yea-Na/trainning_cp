@@ -1,4 +1,4 @@
-package com.training_delivery.demo.model.user;
+package com.training_delivery.demo.model.user.entity;
 
 
 import jakarta.persistence.*;
