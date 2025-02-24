@@ -1,5 +1,6 @@
 package com.training_delivery.demo.model.store.entity;
 
+import com.training_delivery.demo.model.store.constant.WeekDays;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
