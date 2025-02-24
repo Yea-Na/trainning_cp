@@ -21,9 +21,9 @@ public class OperationTimes {
     @Column(name = "store_operating_times_uuid")
     private UUID storeOperatingTimesUuid;
 
-    @Column(name = "weekday", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private WeekDays weekday;
+//    @Column(name = "weekday", nullable = false)
+//    @Enumerated(EnumType.ORDINAL)
+//    private WeekDays weekday;
 
     @Column(name = "operation_times_opening_time", nullable = false)
     private String operationTimeOpeningTime;

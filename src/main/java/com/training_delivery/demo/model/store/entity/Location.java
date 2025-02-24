@@ -1,5 +1,6 @@
 package com.training_delivery.demo.model.store.entity;
 
+import com.training_delivery.demo.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
@@ -24,9 +25,9 @@ public class Location extends BaseEntity {
         @Column(name = "location_uuid")
         private UUID locationUuid;
 
-        @Enumerated(EnumType.STRING)
-        @Column(name = "location_seoul_area_code")
-        private SeoulAreaCode seoulAreaCode;
+//        @Enumerated(EnumType.STRING)
+//        @Column(name = "location_seoul_area_code")
+//        private SeoulAreaCode seoulAreaCode;
 
         @Column(name = "location_seoul_address", nullable = false)
         private String address;

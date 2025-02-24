@@ -21,13 +21,13 @@ public class DeliveryController {
 
     }
 
-    @PatchMapping("/v1/deliveries/{deliveryId}/complete")
-    public CustomResponse<com.server.delivery.domain.delivery.dto.res.DeliveryCompleteResponseDto> completeDelivery(
-            @PathVariable UUID deliveryId,
-            @RequestBody DeliveryCompleteRequestDto request
-    ) {
-
-    }
+//    @PatchMapping("/v1/deliveries/{deliveryId}/complete")
+//    public CustomResponse<com.server.delivery.domain.delivery.dto.res.DeliveryCompleteResponseDto> completeDelivery(
+//            @PathVariable UUID deliveryId,
+//            @RequestBody DeliveryCompleteRequestDto request
+//    ) {
+//
+//    }
 
 
 }

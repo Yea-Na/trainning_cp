@@ -13,13 +13,13 @@ import lombok.*;
 @AllArgsConstructor
 public class DeliveryCompleteResponseDto {
 
-	private OrderInfo orderInfo;
+//	private OrderInfo orderInfo;
 	private UUID deliveryId;
-
-	public static DeliveryCompleteResponseDto from(Delivery delivery, Order order) {
-		return DeliveryCompleteResponseDto.builder()
-				.orderInfo(OrderInfo.from(order))
-				.deliveryId(delivery.getDeliveryUuid())
-				.build();
-	}
+//
+//	public static DeliveryCompleteResponseDto from(Delivery delivery, Order order) {
+//		return DeliveryCompleteResponseDto.builder()
+//				.orderInfo(OrderInfo.from(order))
+//				.deliveryId(delivery.getDeliveryUuid())
+//				.build();
+//	}
 }

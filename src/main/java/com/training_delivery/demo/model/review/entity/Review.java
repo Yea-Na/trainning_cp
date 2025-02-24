@@ -1,6 +1,10 @@
 package com.training_delivery.demo.model.review.entity;
 
 
+import com.training_delivery.demo.common.BaseEntity;
+import com.training_delivery.demo.model.order.entity.Order;
+import com.training_delivery.demo.model.store.entity.Store;
+import com.training_delivery.demo.model.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

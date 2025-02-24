@@ -1,6 +1,8 @@
 package com.training_delivery.demo.model.delivery.entity;
 
 
+import com.training_delivery.demo.common.BaseEntity;
+import com.training_delivery.demo.model.order.entity.Order;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLDelete;
@@ -37,8 +39,8 @@ public class Delivery extends BaseEntity {
 	@Column(name = "delivery_cancel_reason")
 	private String cancelReason;
 
-	@OneToOne(mappedBy = "delivery")
-	private Order order;
+//	@OneToOne(mappedBy = "delivery")
+//	private Order order;
 
 
 	@Column(name = "delivery_tip")

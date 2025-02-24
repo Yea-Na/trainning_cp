@@ -1,5 +1,6 @@
 package com.training_delivery.demo.model.review.entity;
 
+import com.training_delivery.demo.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
