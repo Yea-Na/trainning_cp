@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MenuJpaRepository extends JpaRepository<Menu, Long> {
+
 }
