@@ -1,18 +1,10 @@
 package com.training_delivery.demo.domain.store.controller;
 
-import com.training_delivery.demo.domain.store.dto.request.StoreOperatingHoursRequestDto;
-import com.training_delivery.demo.domain.store.dto.response.StoreResponseDto;
+import com.training_delivery.demo.common.response.CustomResponse;
+import com.training_delivery.demo.domain.store.dto.request.StoreRegisterRequestDto;
 import com.training_delivery.demo.domain.store.service.StoreService;
-import com.training_delivery.demo.model.store.entity.StoreOperationTimes;
-import com.training_delivery.demo.model.store.repository.StoreRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,20 +14,24 @@ public class StoreController {
     private final StoreService storeService;
 
     //매장 등록
-    /*
+
     @PostMapping
     public CustomResponse<Void> registerStore(
             @RequestBody StoreRegisterRequestDto requestDto,
-            @AuthenticationPrincipal CustomUserDetail userDetail
+            String userId
+            //@AuthenticationPrincipal CustomUserDetail userDetail
     ){
+        storeService.registerStore(requestDto, userId);
 
+        return CustomResponse.success("성공");
     }
 
-    //매장 삭제
+/*    //매장 삭제
     @DeleteMapping("/{id}")
     public CustomResponse<Void> deleteStore(
             @PathVariable UUID id,
-            @AuthenticationPrincipal CustomUserDetail userDetail
+            String userId
+            // @AuthenticationPrincipal CustomUserDetail userDetail
             ){
 
     }
@@ -44,7 +40,10 @@ public class StoreController {
     @PatchMapping("/{id}")
     public CustomResponse<Void> deleteStore(
             @PathVariable UUID id,
-            @AuthenticationPrincipal CustomUserDetail userDetail){
+            String userId
+    //@AuthenticationPrincipal CustomUserDetail userDetail
+    )
+    {
 
     }
 
@@ -60,7 +59,9 @@ public class StoreController {
     @PatchMapping("/{storeUuid}/location")
     public CustomResponse<Void> updateStoreLocation(
             @PathVariable UUID storeUuid,
-            @RequestBody StoreLocatoinRequestDto requestDto
+            //@RequestBody StoreLocatoinRequestDto requestDto
+            String userId
+
     ){
 
     }
@@ -79,12 +80,13 @@ public class StoreController {
     public CustomResponse<PageCustom<StoreResponseDto>> searchStore(
             @RequestParam("search") String search,
             @PageableDefault Pageable pageable,
-            @AuthenticationPrincipal CustomUserDetail
+            //@AuthenticationPrincipal CustomUserDetail
+            String userId
+
     ){
 
-    }
+    }*/
 
-    CustomResponse 생성...후
-*/
+
 
 }

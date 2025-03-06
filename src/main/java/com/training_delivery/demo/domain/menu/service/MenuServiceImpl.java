@@ -6,19 +6,16 @@ import com.training_delivery.demo.domain.menu.dto.response.MenuResponseDto;
 import com.training_delivery.demo.model.menu.entity.Menu;
 import com.training_delivery.demo.model.menu.repository.MenuRepository;
 import com.training_delivery.demo.model.store.entity.Store;
-import com.training_delivery.demo.model.store.repository.StoreRepository;
-import com.training_delivery.demo.model.user.repository.UserRepository;
+import com.training_delivery.demo.model.store.repository.store.StoreRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.swing.*;
 import java.util.UUID;
 
 @Service
@@ -26,7 +23,7 @@ import java.util.UUID;
 public class MenuServiceImpl implements MenuService {
     private final MenuRepository menuRepository;
     private final StoreRepository storeRepository;
-    private final UserRepository userRepository;
+   // private final UserRepository userRepository;
 
 
     @Transactional
@@ -36,7 +33,7 @@ public class MenuServiceImpl implements MenuService {
             MenuCreateRequestDto requestDto,
             MultipartFile foodImage) {
         String user = userId;
-        Store store = storeRepository.findByUuid(storeUuid);
+        Store store = storeRepository.findByStoreUuid(storeUuid);
         String uploadedFoodImage = foodImage.getOriginalFilename();
         Menu menu = MenuCreateRequestDto.to(requestDto, store, uploadedFoodImage);
 
@@ -47,9 +44,9 @@ public class MenuServiceImpl implements MenuService {
     public void deleteMenu(String userId,
                            UUID storeUuid) {
         String user = userId;
-        Store store = storeRepository.findByUuid(storeUuid);
+        Store store = storeRepository.findByStoreUuid(storeUuid);
 
-        Menu menu = menuRepository.findByUuid(storeUuid);
+        Menu menu = menuRepository.findByMenuUuId(storeUuid);
 
         menu.setMenuAvailability(false);
 
@@ -65,8 +62,11 @@ public class MenuServiceImpl implements MenuService {
             MultipartFile foodImage
     ) {
         // 기존 메뉴 조회
-        Menu existingMenu = menuRepository.findById(menuUuid)
-                .orElseThrow(() -> new IllegalArgumentException("해당 메뉴가 존재하지 않습니다."));
+        Menu existingMenu = menuRepository.findByMenuUuId(menuUuid);
+        if (existingMenu == null) {
+            throw new IllegalArgumentException("해당 메뉴가 존재하지 않습니다.");
+        }
+
 
         // 이미지 파일이 없으면 기존 이미지 유지
         String updatedFoodImage = existingMenu.getFoodImage();
@@ -91,7 +91,7 @@ public class MenuServiceImpl implements MenuService {
     @Transactional
     public MenuResponseDto getMneu(String userId, UUID menuUuid) {
 
-        Menu menu = menuRepository.findByUuid(menuUuid);
+        Menu menu = menuRepository.findByMenuUuId(menuUuid);
         return MenuResponseDto.from(menu);
     }
 
@@ -105,7 +105,7 @@ public class MenuServiceImpl implements MenuService {
 
         Pageable sortedPageable = PageRequest.of(pageable.getPageNumber(), pageable.getPageSize(), defaultSort);
 
-        Store store = storeRepository.findByUuid(storeUuid);
+        Store store = storeRepository.findByStoreUuid(storeUuid);
 
         Page<Menu> menuList = menuRepository.findByStoreAndMenuNameContainingAndMenuAvailabilityTrue(store, search, pageable);
 

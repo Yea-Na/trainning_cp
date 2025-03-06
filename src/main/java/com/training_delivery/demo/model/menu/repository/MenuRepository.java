@@ -11,12 +11,8 @@ import java.util.UUID;
 
 public interface MenuRepository  {
 
+    Menu findByMenuUuId(UUID menuUuId);
 
-
-    Menu findByUuid(UUID menuUuId);
-
-
-    Optional<Menu> findById(UUID menuUuid);
 
     Page<Menu> findByStoreAndMenuNameContainingAndMenuAvailabilityTrue(Store store, String search, Pageable pageable);
 

@@ -1,7 +1,6 @@
-package com.training_delivery.demo.model.store.repository;
+package com.training_delivery.demo.model.store.repository.store;
 
 import com.training_delivery.demo.model.store.entity.Store;
-import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +12,12 @@ public class StoreRepositoryImpl implements StoreRepository {
     private final StoreJpaRepository storeJpaRepository;
 
     @Override
-    public Store findByUuid(UUID storeUuid) {
-        return storeJpaRepository.findByUuid(storeUuid);
+    public Store findByStoreUuid(UUID storeUuid) {
+        return storeJpaRepository.findByStoreUuid(storeUuid);
+    }
+
+    @Override
+    public Store save(Store store) {
+        return storeJpaRepository.save(store);
     }
 }

@@ -20,7 +20,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @SQLRestriction("location_is_deleted = false")
 @Table(name = "p_location")
-public class Location extends BaseEntity { BaseEntity 작성!*/
+public class Location extends BaseEntity {
 
 
         @Id
@@ -28,9 +28,9 @@ public class Location extends BaseEntity { BaseEntity 작성!*/
         @Column(name = "location_uuid")
         private UUID locationUuid;
 
-//        @Enumerated(EnumType.STRING)
-//        @Column(name = "location_seoul_area_code")
-//        private SeoulAreaCode seoulAreaCode;
+        @Enumerated(EnumType.STRING)
+        @Column(name = "location_seoul_area_code")
+        private SeoulAreaCode seoulAreaCode;
 
         @Column(name = "location_seoul_address", nullable = false)
         private String address;

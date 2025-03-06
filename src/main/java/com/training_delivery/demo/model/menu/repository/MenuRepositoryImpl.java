@@ -14,26 +14,24 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class MenuRepositoryImpl implements MenuRepository {
 
-    private final MenuRepository menuRepository;
+
+    private final MenuJpaRepository menuJpaRepository;
 
 
     @Override
-    public Menu findByUuid(UUID menuUuId) {
-        return menuRepository.findByUuid(menuUuId);
+    public Menu findByMenuUuId(UUID menuUuId) {
+        return menuJpaRepository.findByMenuUuId(menuUuId);
     }
 
-    @Override
-    public Optional<Menu> findById(UUID menuUuid) {
-        return Optional.empty();
-    }
+
 
     @Override
     public Page<Menu> findByStoreAndMenuNameContainingAndMenuAvailabilityTrue(Store store, String search, Pageable pageable) {
-        return menuRepository.findByStoreAndMenuNameContainingAndMenuAvailabilityTrue(store, search, pageable);
+        return menuJpaRepository.findByStoreAndMenuNameContainingAndMenuAvailabilityTrue(store, search, pageable);
     }
 
     @Override
     public void save(Menu menu) {
-        menuRepository.save(menu);
+        menuJpaRepository.save(menu);
     }
 }
