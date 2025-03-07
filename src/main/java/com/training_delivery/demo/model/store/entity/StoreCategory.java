@@ -1,5 +1,6 @@
 package com.training_delivery.demo.model.store.entity;
 
+import com.training_delivery.demo.model.store.constant.StoreType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.SQLRestriction;
@@ -20,9 +21,9 @@ public class StoreCategory {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID storeCategoryId;
 
-//    @Column(name = "store_type", nullable = false)
-//    @Enumerated(EnumType.STRING)
-//    private StoreType storeType;
+    @Column(name = "store_type", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private StoreType storeType;
 
     @Builder.Default
     @Column(name = "store_category_is_deleted")

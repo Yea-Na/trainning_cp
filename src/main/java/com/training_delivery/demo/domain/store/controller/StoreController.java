@@ -2,9 +2,12 @@ package com.training_delivery.demo.domain.store.controller;
 
 import com.training_delivery.demo.common.response.CustomResponse;
 import com.training_delivery.demo.domain.store.dto.request.StoreRegisterRequestDto;
+import com.training_delivery.demo.domain.store.dto.request.StoreUpdateRequestDto;
 import com.training_delivery.demo.domain.store.service.StoreService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,37 +20,43 @@ public class StoreController {
 
     @PostMapping
     public CustomResponse<Void> registerStore(
-            @RequestBody StoreRegisterRequestDto requestDto,
-            String userId
+            @RequestBody StoreRegisterRequestDto requestDto
+            //, String userId
             //@AuthenticationPrincipal CustomUserDetail userDetail
     ){
+        String userId = "admin";
         storeService.registerStore(requestDto, userId);
 
         return CustomResponse.success("성공");
     }
 
-/*    //매장 삭제
+   //매장 삭제
     @DeleteMapping("/{id}")
     public CustomResponse<Void> deleteStore(
-            @PathVariable UUID id,
-            String userId
+            @PathVariable UUID id
+            //String userId
             // @AuthenticationPrincipal CustomUserDetail userDetail
             ){
-
+        String userId = "admin";
+        storeService.deleteStroe(id, userId);
+        return CustomResponse.success("삭제 성공");
     }
 
-    // 매장 정보 수정
+   // 매장 정보 수정
     @PatchMapping("/{id}")
-    public CustomResponse<Void> deleteStore(
-            @PathVariable UUID id,
-            String userId
+    public CustomResponse<Void> updateStore(
+            @RequestBody StoreUpdateRequestDto requestDto,
+            @PathVariable UUID id
+            //, String userId
     //@AuthenticationPrincipal CustomUserDetail userDetail
     )
     {
-
+        String userId = "admin";
+        storeService.updateStore(requestDto, userId , id);
+        return CustomResponse.success("수정 성공");
     }
 
-    //매장 단일 조회
+/*    //매장 단일 조회
     @GetMapping("/{storeUuid}")
     public CustomResponse<StoreResponseDto> getStore(
             @PathVariable UUID storeUuid

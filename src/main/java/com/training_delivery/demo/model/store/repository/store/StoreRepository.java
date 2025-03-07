@@ -8,4 +8,6 @@ public interface StoreRepository {
     Store findByStoreUuid(UUID storeUuid);
 
     Store save(Store store);
+
+    void delete(Store store);
 }

@@ -20,4 +20,9 @@ public class StoreRepositoryImpl implements StoreRepository {
     public Store save(Store store) {
         return storeJpaRepository.save(store);
     }
+
+    @Override
+    public void delete(Store store) {
+         storeJpaRepository.delete(store);
+    }
 }
